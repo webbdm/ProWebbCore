@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWebbCore", "ProWebbCore\ProWebbCore.csproj", "{75FF5631-E585-46A4-941A-25DECA9EA5AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProWebbCore.UI", "ProWebbCore.UI\ProWebbCore.UI.csproj", "{75FF5631-E585-46A4-941A-25DECA9EA5AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

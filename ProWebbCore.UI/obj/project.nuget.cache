@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "31Qv1fL3Bb1Nhi20JOW29suk9q9i2ehF5o5Vlod+x3wdB+mocENskuKVrDC34UeOA9oislFixSozOsf3898ZqQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore.UI\\ProWebbCore.UI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MSU TEST\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.8\\microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512"
+  ],
+  "logs": []
+}
