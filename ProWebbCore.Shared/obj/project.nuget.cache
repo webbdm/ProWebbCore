@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "4X5TQSWMXaOgnjZqkAKrB6cIW9rjSUxewPh7NjqLVcF4ApXI0bpGH1wnvQXpo0Imz18AvUtIHqp/L78d92AyMA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore.Shared\\ProWebbCore.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MSU TEST\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\MSU TEST\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
