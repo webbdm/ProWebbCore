@@ -44,3 +44,4 @@ C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore.UI\obj\Debug\netcoreapp
 C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore.UI\obj\Debug\netcoreapp3.1\staticwebassets\ProWebbCore.UI.StaticWebAssets.xml
 C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore.UI\obj\Debug\netcoreapp3.1\ProWebbCore.UI.genruntimeconfig.cache
 C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore.UI\obj\Debug\netcoreapp3.1\ProWebbCore.UI.csproj.CopyComplete
+C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore.UI\obj\Debug\netcoreapp3.1\ProWebbCore.UI.csprojAssemblyReference.cache
