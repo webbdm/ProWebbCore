@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "4X5TQSWMXaOgnjZqkAKrB6cIW9rjSUxewPh7NjqLVcF4ApXI0bpGH1wnvQXpo0Imz18AvUtIHqp/L78d92AyMA==",
+  "dgSpecHash": "x332oEqCk1tFRrD55wYtZOI/Zp/z73ZHWrOZKmEdvFcQHdp+RAyocwWcns0pme8TQnxIw8ukm+Y0n4l53tAloA==",
   "success": true,
   "projectFilePath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore.Shared\\ProWebbCore.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MSU TEST\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\MSU TEST\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\MSU TEST\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\MSU TEST\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

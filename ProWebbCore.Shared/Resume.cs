@@ -3,12 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProWebbCore.Shared
 {
-    public class Skill
+    class Resume
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public int ResumeId { get; set; }
-        public int YearsExperience { get; set; }
+        public int UserId { get; set; } 
     }
 }
