@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProWebbCore.Shared
 {
-    class Resume
+    public class Resume
     {
         [Key]
         public int Id { get; set; }
