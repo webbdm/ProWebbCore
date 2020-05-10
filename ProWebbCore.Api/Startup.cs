@@ -1,12 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using ProWebbCore.Api.Models;
-using Npgsql;
 
 namespace ProWebbCore.Api
 {
@@ -22,7 +20,13 @@ namespace ProWebbCore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options => options.UseNpgsql("Host=my_host;Database=my_db;Username=my_user;Password=my_pw"));
+            services.AddDbContext<AppDbContext>(options => options.UseMySql((Configuration.GetConnectionString("DatabaseConnectionString"))));
+           
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IJobRepository, JobRepository>();
+            services.AddScoped<ISkillRepository, SkillRepository>();
+            services.AddScoped<IResumeRepository, ResumeRepository>();
+
             services.AddControllers();
         }
 
