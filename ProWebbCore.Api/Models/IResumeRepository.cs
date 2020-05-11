@@ -7,5 +7,6 @@ namespace ProWebbCore.Api.Models
     {
         IEnumerable<Resume> GetAllResumes();
         Resume GetResumeById(int id);
+        Resume AddResume(int userId);
     }
 }

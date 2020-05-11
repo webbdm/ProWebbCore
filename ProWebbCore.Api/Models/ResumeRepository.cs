@@ -22,5 +22,16 @@ namespace ProWebbCore.Api.Models
         {
             return _appDbContext.Resumes.FirstOrDefault(c => c.Id == id);
         }
+
+        public Resume AddResume(int userId)
+        {
+            var newResume = new Resume();
+            newResume.UserId = userId;
+
+            var addedEntity = _appDbContext.Resumes.Add(newResume);
+
+            _appDbContext.SaveChanges();
+            return addedEntity.Entity;
+        }
     }
 }

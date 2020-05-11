@@ -26,6 +26,10 @@ namespace ProWebbCore.Api.Models
         public User AddUser(User user) {
             var addedEntity = _appDbContext.Users.Add(user);
             _appDbContext.SaveChanges();
+
+            var _resumeRepo = new ResumeRepository(_appDbContext);
+            _resumeRepo.AddResume(addedEntity.Entity.Id);
+
             return addedEntity.Entity;
         }
 
