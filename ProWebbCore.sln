@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWebbCore", "ProWebbCore\ProWebbCore.csproj", "{75FF5631-E585-46A4-941A-25DECA9EA5AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProWebbCore.UI", "ProWebbCore.UI\ProWebbCore.UI.csproj", "{75FF5631-E585-46A4-941A-25DECA9EA5AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWebbCore.Shared", "ProWebbCore.Shared\ProWebbCore.Shared.csproj", "{D6187B2C-7AD0-4F4B-905A-AB2377FED155}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWebbCore.Api", "ProWebbCore.Api\ProWebbCore.Api.csproj", "{38812E1F-DEE1-412A-B1AC-13BACA92C7DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{75FF5631-E585-46A4-941A-25DECA9EA5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75FF5631-E585-46A4-941A-25DECA9EA5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75FF5631-E585-46A4-941A-25DECA9EA5AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6187B2C-7AD0-4F4B-905A-AB2377FED155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6187B2C-7AD0-4F4B-905A-AB2377FED155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6187B2C-7AD0-4F4B-905A-AB2377FED155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6187B2C-7AD0-4F4B-905A-AB2377FED155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38812E1F-DEE1-412A-B1AC-13BACA92C7DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38812E1F-DEE1-412A-B1AC-13BACA92C7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38812E1F-DEE1-412A-B1AC-13BACA92C7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38812E1F-DEE1-412A-B1AC-13BACA92C7DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
