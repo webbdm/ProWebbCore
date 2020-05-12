@@ -6,9 +6,9 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["ProWebbCore.Api/ProWebbCore.Api.csproj", "ProWebbCore.Api/"]
+COPY ["ProWebbCore.Api.csproj", "ProWebbCore.Api/"]
 RUN dotnet restore "ProWebbCore.Api/ProWebbCore.Api.csproj"
-COPY . .
+COPY . ./
 WORKDIR "/src/ProWebbCore.Api"
 RUN dotnet build "ProWebbCore.Api.csproj" -c Release -o /app/build
 
