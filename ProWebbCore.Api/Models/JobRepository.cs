@@ -22,5 +22,10 @@ namespace ProWebbCore.Api.Models
         {
             return _appDbContext.Jobs.FirstOrDefault(c => c.Id == id);
         }
+
+        public Job AddJob(Job job)
+        {
+            return _appDbContext.Jobs.Add(job).Entity;
+        }
     }
 }

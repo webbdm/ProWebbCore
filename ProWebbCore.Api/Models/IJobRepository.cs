@@ -7,5 +7,6 @@ namespace ProWebbCore.Api.Models
     {
         IEnumerable<Job> GetAllJobs();
         Job GetJobById(int id);
+        Job AddJob(Job job);
     }
 }
