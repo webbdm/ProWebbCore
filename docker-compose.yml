@@ -3,12 +3,13 @@ services:
   db:
     image: mysql:latest
     environment:
-      ROOT_PASSWORD: atiba-10
-      DATABASE: ProWebb
-      USER: root
-      PASSWORD: atiba-10
+      MYSQL_ROOT_PASSWORD: atiba-10
+      MYSQL_DATABASE: ProWebb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: atiba-10
     ports:
-      - 3307:3306
+      - 3307:3307
+    restart: always
     volumes:
       - db_data_container:/var/lib/mysql
   api:
@@ -16,7 +17,7 @@ services:
         - db
     image: prowebbcore.api
     ports:
-        - 4001:80
+        - 8080:80
     build:
       context: ./ProWebbCore
       dockerfile: Dockerfile
