@@ -27,5 +27,25 @@ namespace ProWebbCore.Api.Models
         {
             return _appDbContext.Jobs.Add(job).Entity;
         }
+
+        public Job UpdateJob(Job job)
+        {
+            var foundJob = _appDbContext.Jobs.FirstOrDefault(e => e.Id == job.Id);
+
+            if (foundJob != null)
+            {
+                // Add changes here
+                _appDbContext.SaveChanges();
+
+                return foundJob;
+            }
+
+            return null;
+        }
+
+        public void DeleteJob(int id)
+        {
+
+        }
     }
 }
