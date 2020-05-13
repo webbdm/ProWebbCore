@@ -5,9 +5,16 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProWebbCore.UI", "ProWebbCore.UI\ProWebbCore.UI.csproj", "{75FF5631-E585-46A4-941A-25DECA9EA5AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWebbCore.Shared", "ProWebbCore.Shared\ProWebbCore.Shared.csproj", "{D6187B2C-7AD0-4F4B-905A-AB2377FED155}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProWebbCore.Shared", "ProWebbCore.Shared\ProWebbCore.Shared.csproj", "{D6187B2C-7AD0-4F4B-905A-AB2377FED155}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWebbCore.Api", "ProWebbCore.Api\ProWebbCore.Api.csproj", "{38812E1F-DEE1-412A-B1AC-13BACA92C7DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProWebbCore.Api", "ProWebbCore.Api\ProWebbCore.Api.csproj", "{38812E1F-DEE1-412A-B1AC-13BACA92C7DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{27B8DE82-C156-4EEB-8A60-EFD4B21589A7}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		..\docker-compose.yml = ..\docker-compose.yml
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
