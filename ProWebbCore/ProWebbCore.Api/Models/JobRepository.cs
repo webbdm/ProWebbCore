@@ -25,7 +25,10 @@ namespace ProWebbCore.Api.Models
 
         public Job AddJob(Job job)
         {
-            return _appDbContext.Jobs.Add(job).Entity;
+            var addedEntity = _appDbContext.Jobs.Add(job);
+            _appDbContext.SaveChanges();
+
+            return addedEntity.Entity;
         }
 
         public Job UpdateJob(Job job)
