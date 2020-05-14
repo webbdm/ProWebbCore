@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yIDMkqv0kTfFsUqMTsa8Xc5QRLqEtGGtgW/3bgjgHhFZAYKtNE2YEbwnoBF66/GuiNkMTvPCf016seHGXxyPCg==",
+  "dgSpecHash": "9gm4DIIu1PSnAMBtUYOJGPRmpZpCWr6ShIheaNxXVZ4hTUqPrUn/8RW2/XRmsjnZuEaZU+RMxAFuP3iyDkYujw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\DotnetCoreStarter\\DotnetCoreStarter.csproj",
+  "projectFilePath": "C:\\Users\\MSU TEST\\Desktop\\DotnetCoreStarter\\DotnetCoreStarter\\DotnetCoreStarter.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MSU TEST\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\MSU TEST\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

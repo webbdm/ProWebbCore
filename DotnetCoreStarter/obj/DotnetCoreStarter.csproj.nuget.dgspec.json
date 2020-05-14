@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MSU TEST\\Desktop\\dotnet\\DotnetCoreStarter\\DotnetCoreStarter.csproj": {}
+    "C:\\Users\\MSU TEST\\Desktop\\DotnetCoreStarter\\DotnetCoreStarter\\DotnetCoreStarter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MSU TEST\\Desktop\\dotnet\\DotnetCoreStarter\\DotnetCoreStarter.csproj": {
+    "C:\\Users\\MSU TEST\\Desktop\\DotnetCoreStarter\\DotnetCoreStarter\\DotnetCoreStarter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\DotnetCoreStarter\\DotnetCoreStarter.csproj",
+        "projectUniqueName": "C:\\Users\\MSU TEST\\Desktop\\DotnetCoreStarter\\DotnetCoreStarter\\DotnetCoreStarter.csproj",
         "projectName": "DotnetCoreStarter",
-        "projectPath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\DotnetCoreStarter\\DotnetCoreStarter.csproj",
+        "projectPath": "C:\\Users\\MSU TEST\\Desktop\\DotnetCoreStarter\\DotnetCoreStarter\\DotnetCoreStarter.csproj",
         "packagesPath": "C:\\Users\\MSU TEST\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\DotnetCoreStarter\\obj\\",
+        "outputPath": "C:\\Users\\MSU TEST\\Desktop\\DotnetCoreStarter\\DotnetCoreStarter\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MSU TEST\\AppData\\Roaming\\NuGet\\NuGet.Config",
