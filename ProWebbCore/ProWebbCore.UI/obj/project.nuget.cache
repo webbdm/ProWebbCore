@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zgcWjbKyHftZKU3gAekKde2o8oHsQBbuBoacA1aFZAlZtddLn42iQs8ft+B/Bx4+St1dcpSOa6/rY0uxiXgJuQ==",
+  "dgSpecHash": "XNSRm8nrfUBitA9hZG6nTdNJYEdPjAU6uSiacxGmTcJb8GvDXLdBg9k21eCrlD94oTCqTIVqyjMeljTcjaeHaA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore.UI\\ProWebbCore.UI.csproj",
+  "projectFilePath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore\\ProWebbCore.UI\\ProWebbCore.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MSU TEST\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\MSU TEST\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
