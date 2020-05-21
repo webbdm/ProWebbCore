@@ -149,3 +149,10 @@ C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore.Api\obj\Debug\netcoreap
 C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore.Api\obj\Debug\netcoreapp3.1\ProWebbCore.Api.dll
 C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore.Api\obj\Debug\netcoreapp3.1\ProWebbCore.Api.pdb
 C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore.Api\obj\Debug\netcoreapp3.1\ProWebbCore.Api.genruntimeconfig.cache
+C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore\ProWebbCore.Api\obj\Debug\netcoreapp3.1\ProWebbCore.Api.csprojAssemblyReference.cache
+C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore\ProWebbCore.Api\obj\Debug\netcoreapp3.1\ProWebbCore.Api.csproj.CoreCompileInputs.cache
+C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore\ProWebbCore.Api\obj\Debug\netcoreapp3.1\ProWebbCore.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore\ProWebbCore.Api\obj\Debug\netcoreapp3.1\ProWebbCore.Api.AssemblyInfoInputs.cache
+C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore\ProWebbCore.Api\obj\Debug\netcoreapp3.1\ProWebbCore.Api.AssemblyInfo.cs
+C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore\ProWebbCore.Api\obj\Debug\netcoreapp3.1\ProWebbCore.Api.dll
+C:\Users\MSU TEST\Desktop\dotnet\ProWebbCore\ProWebbCore\ProWebbCore.Api\obj\Debug\netcoreapp3.1\ProWebbCore.Api.pdb

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using ProWebbCore.Shared;
 
 namespace ProWebbCore.Api.Models
@@ -13,14 +14,19 @@ namespace ProWebbCore.Api.Models
             _appDbContext = appDbContext;
         }
 
-        public IEnumerable<Skill> GetAllSkills()
+        public Skill CreateSkill(int resumeId, Skill skill)
         {
-            return _appDbContext.Skills;
-        }
 
-        public Skill GetSkillById(int id)
-        {
-            return _appDbContext.Skills.FirstOrDefault(c => c.Id == id);
+            var skillToAdd = new Skill {
+                Name = skill.Name,
+                ResumeId = resumeId,
+                YearsExperience = skill.YearsExperience
+            };
+
+            var addedEntity = _appDbContext.Skills.Add(skillToAdd);
+            _appDbContext.SaveChanges();
+
+            return addedEntity.Entity;
         }
     }
 }
