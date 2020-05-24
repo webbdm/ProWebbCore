@@ -16,7 +16,7 @@ namespace ProWebbCore.Api.Models
 
         public IEnumerable<User> GetAllUsers()
         {
-            return _appDbContext.Users.Include(u => u.Resumes);
+            return _appDbContext.Users.Include(u => u.Resumes).ThenInclude(r => r.Skill);
         }
 
         public User GetUserById(int id)
