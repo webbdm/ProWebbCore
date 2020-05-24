@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+3yGyM+RZdUtAUPIxE/kjHrKqp3tWnlFispJ0T3IPX8Deyd5S55QzqdcgOoiUT0dUcP12d7eQb13w+crOxyXSg==",
+  "dgSpecHash": "/7IJashlIulpQF80iKWi0M7J0bj94qyyZd1o+iSSSqPDaGM+HyV81zipjjSLtSQVdpFmspV7D8UB+G+RkszQcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore.Api\\ProWebbCore.Api.csproj",
+  "projectFilePath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore\\ProWebbCore.Api\\ProWebbCore.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MSU TEST\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\MSU TEST\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

@@ -38,7 +38,7 @@ namespace ProWebbCore.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            context.Database.Migrate();
+            // context.Database.Migrate(); // Not always needed
 
             app.UseRouting();
 
