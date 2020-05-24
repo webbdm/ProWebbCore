@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore.Shared\\ProWebbCore.Shared.csproj": {}
+    "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore\\ProWebbCore.Shared\\ProWebbCore.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore.Shared\\ProWebbCore.Shared.csproj": {
+    "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore\\ProWebbCore.Shared\\ProWebbCore.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore.Shared\\ProWebbCore.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore\\ProWebbCore.Shared\\ProWebbCore.Shared.csproj",
         "projectName": "ProWebbCore.Shared",
-        "projectPath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore.Shared\\ProWebbCore.Shared.csproj",
+        "projectPath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore\\ProWebbCore.Shared\\ProWebbCore.Shared.csproj",
         "packagesPath": "C:\\Users\\MSU TEST\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore.Shared\\obj\\",
+        "outputPath": "C:\\Users\\MSU TEST\\Desktop\\dotnet\\ProWebbCore\\ProWebbCore\\ProWebbCore.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MSU TEST\\AppData\\Roaming\\NuGet\\NuGet.Config",

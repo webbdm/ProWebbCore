@@ -5,7 +5,6 @@ namespace ProWebbCore.Api.Models
 {
     public interface ISkillRepository
     {
-        IEnumerable<Skill> GetAllSkills();
-        Skill GetSkillById(int id);
+        Skill CreateSkill(int resumeId, Skill skill);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using ProWebbCore.Shared;
 
 namespace ProWebbCore.Api.Models
@@ -15,7 +16,7 @@ namespace ProWebbCore.Api.Models
 
         public IEnumerable<User> GetAllUsers()
         {
-            return _appDbContext.Users;
+            return _appDbContext.Users.Include(u => u.Resumes).ThenInclude(r => r.Skill);
         }
 
         public User GetUserById(int id)
@@ -23,7 +24,8 @@ namespace ProWebbCore.Api.Models
             return _appDbContext.Users.FirstOrDefault(c => c.Id == id);
         }
 
-        public User AddUser(User user) {
+        public User AddUser(User user)
+        {
             var addedEntity = _appDbContext.Users.Add(user);
             _appDbContext.SaveChanges();
 
@@ -33,7 +35,8 @@ namespace ProWebbCore.Api.Models
             return addedEntity.Entity;
         }
 
-        public User UpdateUser(User user){
+        public User UpdateUser(User user)
+        {
             var foundUser = _appDbContext.Users.FirstOrDefault(e => e.Id == user.Id);
 
             if (foundUser != null)
@@ -48,7 +51,8 @@ namespace ProWebbCore.Api.Models
 
             return null;
         }
-        public void DeleteUser(int id) { 
+        public void DeleteUser(int id)
+        {
 
         }
     }
