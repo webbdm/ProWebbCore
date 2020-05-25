@@ -22,15 +22,17 @@ namespace ProWebbCore.UI.Services
                 (await _httpClient.GetStreamAsync($"api/users"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
+        public async Task<User> GetUserDetails(int userId)
+        {
+            return await JsonSerializer.DeserializeAsync<User>
+                (await _httpClient.GetStreamAsync($"api/user/{userId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+
         public Task<User> AddUser(User user)
         {
             throw new NotImplementedException();
         }
 
-        public Task<User> GetUserDetails(int userId)
-        {
-            throw new NotImplementedException();
-        }
 
         public Task UpdateUser(User user)
         {
