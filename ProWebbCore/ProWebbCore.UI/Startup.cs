@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProWebbCore.UI.Services;
 
 namespace ProWebbCore.UI
 {
@@ -26,6 +27,11 @@ namespace ProWebbCore.UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddHttpClient<IUserDataService, UserDataService>(
+                client => 
+                {
+                    client.BaseAddress = new Uri("http://localhost:3000/api");
+                });
             services.AddServerSideBlazor();
         }
 
