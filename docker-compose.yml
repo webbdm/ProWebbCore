@@ -21,5 +21,16 @@ services:
     build:
       context: ./ProWebbCore
       dockerfile: Dockerfile
+  client:
+    depends_on: 
+      - api
+    # image: node:13.12.0-alpine
+    build: 
+      context: ./Client
+    volumes:
+      - ./Client/:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "3000:3000"
 volumes:
   db_data_container: {}

@@ -16,12 +16,15 @@ namespace ProWebbCore.Api.Models
 
         public IEnumerable<User> GetAllUsers()
         {
-            return _appDbContext.Users.Include(u => u.Resumes).ThenInclude(r => r.Skill);
+            return _appDbContext.Users;
         }
 
         public User GetUserById(int id)
         {
-            return _appDbContext.Users.FirstOrDefault(c => c.Id == id);
+            return _appDbContext.Users
+                .Include(u => u.Resumes)
+                .ThenInclude(r => r.Skills)
+                .FirstOrDefault(c => c.Id == id);
         }
 
         public User AddUser(User user)

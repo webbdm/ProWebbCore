@@ -1,12 +1,9 @@
 @page "/resume/{UserId}"
 @inherits ResumeBase
 
+
+
+
 <section class="resume">
-    <h1 class="page-title">Resume for @User.FirstName @User.LastName</h1>
-
-    @{
-        var leadingFormat = "00000";
-        //var a = User.UserId.ToString("00000");
-    }
-
+    <h1 class="page-title">@User.FirstName @User.LastName</h1>
 </section>

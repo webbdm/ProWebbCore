@@ -12,6 +12,7 @@ namespace ProWebbCore.UI.Pages
     {
         [Parameter]
         public string UserId { get; set; }
+        public Resume Resume { get; set; } //= new Resume();
 
         [Inject]
         public IUserDataService UserDataService { get; set; }
@@ -21,6 +22,7 @@ namespace ProWebbCore.UI.Pages
         protected override async Task OnInitializedAsync()
         {
             User = await UserDataService.GetUserDetails(int.Parse(UserId));
+            // Resume = User.Resumes[0];
         }
 
     }

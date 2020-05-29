@@ -25,7 +25,7 @@ namespace ProWebbCore.UI.Services
         public async Task<User> GetUserDetails(int userId)
         {
             return await JsonSerializer.DeserializeAsync<User>
-                (await _httpClient.GetStreamAsync($"api/user/{userId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                (await _httpClient.GetStreamAsync($"api/user/{userId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true, MaxDepth = 2 });
         }
 
         public Task<User> AddUser(User user)
