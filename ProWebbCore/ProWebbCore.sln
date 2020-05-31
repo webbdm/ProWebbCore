@@ -3,11 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProWebbCore.UI", "ProWebbCore.UI\ProWebbCore.UI.csproj", "{75FF5631-E585-46A4-941A-25DECA9EA5AB}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProWebbCore.Shared", "ProWebbCore.Shared\ProWebbCore.Shared.csproj", "{D6187B2C-7AD0-4F4B-905A-AB2377FED155}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProWebbCore.Api", "ProWebbCore.Api\ProWebbCore.Api.csproj", "{38812E1F-DEE1-412A-B1AC-13BACA92C7DF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1296ADE1-4488-4C06-A788-D1D885C2248D} = {1296ADE1-4488-4C06-A788-D1D885C2248D}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{27B8DE82-C156-4EEB-8A60-EFD4B21589A7}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,16 +16,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProWebbCore.Infrastructure", "..\..\..\Workspace\DotnetCoreStarter\DotnetCoreStarter.Infrastructure\ProWebbCore.Infrastructure.csproj", "{1296ADE1-4488-4C06-A788-D1D885C2248D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{75FF5631-E585-46A4-941A-25DECA9EA5AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75FF5631-E585-46A4-941A-25DECA9EA5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75FF5631-E585-46A4-941A-25DECA9EA5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75FF5631-E585-46A4-941A-25DECA9EA5AB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6187B2C-7AD0-4F4B-905A-AB2377FED155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6187B2C-7AD0-4F4B-905A-AB2377FED155}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6187B2C-7AD0-4F4B-905A-AB2377FED155}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +32,10 @@ Global
 		{38812E1F-DEE1-412A-B1AC-13BACA92C7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38812E1F-DEE1-412A-B1AC-13BACA92C7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38812E1F-DEE1-412A-B1AC-13BACA92C7DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1296ADE1-4488-4C06-A788-D1D885C2248D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1296ADE1-4488-4C06-A788-D1D885C2248D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1296ADE1-4488-4C06-A788-D1D885C2248D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1296ADE1-4488-4C06-A788-D1D885C2248D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

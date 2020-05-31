@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProWebbCore.Shared\ProWebbCore.Shared.csproj" />
+	<ProjectReference Include="..\ProWebbCore.Infrastructure\ProWebbCore.Infrastructure.csproj" />
   </ItemGroup>
 
 
