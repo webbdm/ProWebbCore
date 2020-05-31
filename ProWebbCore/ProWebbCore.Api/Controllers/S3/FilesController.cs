@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProWebbCore.Api.Models;
-using ProWebbCore.Infrastrucutre.Communication.Interfaces;
+using ProWebbCore.Infrastructure.Communication.Interfaces;
 using ProWebbCore.Infrastructure.Communication.Files;
 
 namespace ProWebbCore.Api.Controllers.S3

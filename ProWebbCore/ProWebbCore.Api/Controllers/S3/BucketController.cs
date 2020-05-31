@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ProWebbCore.Api.Models;
 using ProWebbCore.Infrastructure.Communication.Interfaces;
 using ProWebbCore.Infrastructure.Communication.Bucket;
+using ProWebbCore.Communication.Bucket;
 
 namespace ProWebbCore.Api.Controllers.S3
 {
