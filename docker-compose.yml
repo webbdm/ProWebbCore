@@ -8,7 +8,7 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: atiba-10
     ports:
-      - 3307:3307
+      - 3307:3306
     restart: always
     volumes:
       - db_data_container:/var/lib/mysql
@@ -17,20 +17,19 @@ services:
         - db
     image: prowebbcore.api
     ports:
-        - 8080:80
+        - 8081:80
     build:
       context: ./ProWebbCore
       dockerfile: Dockerfile
   client:
     depends_on: 
       - api
-    # image: node:13.12.0-alpine
     build: 
       context: ./Client
     volumes:
       - ./Client/:/usr/app
       - /usr/app/node_modules
     ports:
-      - "3000:3000"
+      - "8080:8080"
 volumes:
   db_data_container: {}
