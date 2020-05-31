@@ -1,5 +1,6 @@
 version: '3.7'
 services:
+  # Note that this 'db' becomes the service name. 'localhost' will not work as the service name in prod.
   db:
     image: mysql:latest
     environment:
@@ -8,7 +9,7 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: atiba-10
     ports:
-      - 3307:3307
+      - 3307:3306
     restart: always
     volumes:
       - db_data_container:/var/lib/mysql
@@ -17,9 +18,19 @@ services:
         - db
     image: prowebbcore.api
     ports:
-        - 8080:80
+        - 8081:80
     build:
       context: ./ProWebbCore
       dockerfile: Dockerfile
+  client:
+    depends_on: 
+      - api
+    build: 
+      context: ./Client
+    volumes:
+      - ./Client/:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "8080:8080"
 volumes:
   db_data_container: {}

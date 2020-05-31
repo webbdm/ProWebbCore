@@ -10,6 +10,6 @@ namespace ProWebbCore.Shared
         public int Id { get; set; }
         public int UserId { get; set; }
 
-        public List<Skill> Skill { get; set; }
+        public List<Skill> Skills { get; set; }
     }
 }
