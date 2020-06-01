@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Workspace\DotnetCoreStarter\DotnetCoreStarter.Infrastructure\ProWebbCore.Infrastructure.csproj" />
+    <ProjectReference Include="..\ProWebbCore.Infrastructure\ProWebbCore.Infrastructure.csproj" />
     <ProjectReference Include="..\ProWebbCore.Shared\ProWebbCore.Shared.csproj" />
   </ItemGroup>
 

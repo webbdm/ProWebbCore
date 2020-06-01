@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProWebbCore.Infrastructure", "..\..\..\Workspace\DotnetCoreStarter\DotnetCoreStarter.Infrastructure\ProWebbCore.Infrastructure.csproj", "{1296ADE1-4488-4C06-A788-D1D885C2248D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProWebbCore.Infrastructure", "ProWebbCore.Infrastructure\ProWebbCore.Infrastructure.csproj", "{1296ADE1-4488-4C06-A788-D1D885C2248D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
