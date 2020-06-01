@@ -12,6 +12,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProWebbCore.Api", "ProWebbC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{27B8DE82-C156-4EEB-8A60-EFD4B21589A7}"
 	ProjectSection(SolutionItems) = preProject
+		.filenesting.json = .filenesting.json
 		..\docker-compose.yml = ..\docker-compose.yml
 		Dockerfile = Dockerfile
 	EndProjectSection
