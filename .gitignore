@@ -28,6 +28,9 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 
+ProWebbCore/ProWebbCore.Api/appsettings.json
+ProWebbCore/ProWebbCore/Api/appsettings.Development.json
+
 # Visual Studio 2015
 ProWebbCore/.vs/
 
