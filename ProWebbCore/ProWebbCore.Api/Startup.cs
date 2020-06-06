@@ -8,7 +8,7 @@ using ProWebbCore.Api.Models;
 using ProWebbCore.Infrastructure.Repositories;
 using ProWebbCore.Infrastructure.Communication.Interfaces;
 using Amazon.S3;
-
+using System;
 
 namespace ProWebbCore.Api
 {
@@ -27,7 +27,7 @@ namespace ProWebbCore.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => options.UseMySql((_configuration.GetConnectionString("DatabaseConnectionString"))));
-            
+
             services.AddAWSService<IAmazonS3>(_configuration.GetAWSOptions());
             services.AddSingleton<IBucketRepository, BucketRepository>();
             services.AddSingleton<IFilesRepository, FilesRepository>();
@@ -47,6 +47,7 @@ namespace ProWebbCore.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, AppDbContext context)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
