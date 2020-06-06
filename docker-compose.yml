@@ -17,7 +17,7 @@ services:
     depends_on:
         - db
     image: prowebbcore.api
-    environment:
+    # environment:
       # AWS_ACCESS_KEY_ID: ${HOST_ACCESS_KEY_ID}
       # AWS_SECRET_ACCESS_KEY: ${HOST_AWS_SECRET_ACCESS_KEY}
     ports:
@@ -37,5 +37,13 @@ services:
       - /usr/app/node_modules
     ports:
       - "8080:8080"
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    links:
+      - api
 volumes:
   db_data_container: {}
