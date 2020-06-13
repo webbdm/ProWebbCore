@@ -6,6 +6,8 @@ project.lock.json
 
 .env
 
+fargatetask.json
+
 # Visual Studio Code
 .vscode
 
