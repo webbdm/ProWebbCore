@@ -44,8 +44,8 @@ services:
       context: ./nginx
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "8082:80"
     links:
-      - api
+      - client
 volumes:
   db_data_container: {}
