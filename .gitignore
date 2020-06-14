@@ -6,7 +6,9 @@ project.lock.json
 
 .env
 
-fargatetask.json
+# Any AWS config files to be saved but not used for code
+fargatetask.json 
+Dockerrun.aws.json
 
 # Visual Studio Code
 .vscode
