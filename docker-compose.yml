@@ -25,8 +25,6 @@ services:
     build:
       context: ./ProWebbCore
       dockerfile: Dockerfile
-    volumes:
-      - /.aws/*:/app/.aws/
   client:
     depends_on: 
       - api
@@ -34,18 +32,18 @@ services:
     build: 
       context: ./Client
     volumes:
-      - ./Client/:/usr/app
-      - /usr/app/node_modules
+      - ./Client/:/app
+      - /app/node_modules
     ports:
       - "8080:8080"
   nginx:
-    image: nginx
+    depends_on: 
+      - api
+    restart: always
     build:
       context: ./nginx
       dockerfile: Dockerfile
     ports:
       - "80:80"
-    links:
-      - client
 volumes:
   db_data_container: {}
