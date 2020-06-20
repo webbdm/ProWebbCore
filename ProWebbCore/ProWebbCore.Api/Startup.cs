@@ -9,6 +9,7 @@ using ProWebbCore.Infrastructure.Repositories;
 using ProWebbCore.Infrastructure.Communication.Interfaces;
 using Amazon.S3;
 using System;
+using Microsoft.AspNetCore.Http;
 
 namespace ProWebbCore.Api
 {
@@ -63,6 +64,11 @@ namespace ProWebbCore.Api
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("ProWebbCore");
+                });
+
                 endpoints.MapControllers();
             });
         }
