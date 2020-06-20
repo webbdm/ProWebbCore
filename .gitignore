@@ -36,6 +36,10 @@ msbuild.wrn
 
 ProWebbCore/ProWebbCore.Api/appsettings.json
 ProWebbCore/ProWebbCore/Api/appsettings.Development.json
+ProWebbCore/ProWebbCore/Api/appsettings.Production.json
+
+# For local deployments to AWS EBS from Visual Studio AWS Toolkit
+ProWebbCore/ProWebbCore.Api/aws-beanstalk-tools-defaults.json
 
 # Visual Studio 2015
 ProWebbCore/.vs/
