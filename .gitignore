@@ -4,6 +4,12 @@ project.lock.json
 .DS_Store
 *.pyc
 
+.env
+
+# Any AWS config files to be saved but not used for code
+fargatetask.json 
+Dockerrun.aws.json
+
 # Visual Studio Code
 .vscode
 
@@ -27,6 +33,9 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+
+ProWebbCore/ProWebbCore.Api/appsettings.json
+ProWebbCore/ProWebbCore/Api/appsettings.Development.json
 
 # Visual Studio 2015
 ProWebbCore/.vs/
