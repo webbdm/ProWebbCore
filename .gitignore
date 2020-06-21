@@ -34,10 +34,22 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 
-ProWebbCore/ProWebbCore.Api/appsettings.json
-ProWebbCore/ProWebbCore/Api/appsettings.Development.json
+# appsettings.*.json This doesn't work for some reason
+
+# provide a .example.json fiel instead
+appsettings.json
+
+appsettings.Production.json
+appsettings.Development.json
+
+# For local deployments to AWS EBS from Visual Studio AWS Toolkit
+ProWebbCore/ProWebbCore.Api/aws-beanstalk-tools-defaults.json
 
 # Visual Studio 2015
 ProWebbCore/.vs/
 
 */node_modules
+
+ProWebbCore.git.bfg-report/
+ProWebbCore.git/
+bfg-1.13.0.jar

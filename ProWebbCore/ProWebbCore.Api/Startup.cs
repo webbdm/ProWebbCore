@@ -9,6 +9,7 @@ using ProWebbCore.Infrastructure.Repositories;
 using ProWebbCore.Infrastructure.Communication.Interfaces;
 using Amazon.S3;
 using System;
+using Microsoft.AspNetCore.Http;
 
 namespace ProWebbCore.Api
 {
@@ -16,9 +17,14 @@ namespace ProWebbCore.Api
     {
         private readonly IConfiguration _configuration;
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostEnvironment env)
         {
-            _configuration = configuration;
+            var Configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: false, reloadOnChange: true)
+                .AddEnvironmentVariables();
+
+                _configuration = Configuration.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -26,7 +32,7 @@ namespace ProWebbCore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options => options.UseMySql((_configuration.GetConnectionString("DatabaseConnectionString"))));
+            services.AddDbContext<AppDbContext>(options => options.UseMySql(_configuration.GetConnectionString("DatabaseConnectionString")));
 
             services.AddAWSService<IAmazonS3>(_configuration.GetAWSOptions());
             services.AddSingleton<IBucketRepository, BucketRepository>();
@@ -63,6 +69,11 @@ namespace ProWebbCore.Api
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("ProWebbCore");
+                });
+
                 endpoints.MapControllers();
             });
         }
