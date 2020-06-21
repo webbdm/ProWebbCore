@@ -49,3 +49,7 @@ ProWebbCore/ProWebbCore.Api/aws-beanstalk-tools-defaults.json
 ProWebbCore/.vs/
 
 */node_modules
+
+ProWebbCore.git.bfg-report/
+ProWebbCore.git/
+bfg-1.13.0.jar
