@@ -1,4 +1,4 @@
-{
+ {
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -20,7 +20,7 @@
     "ProWebbCore.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "/",
+      "launchUrl": "",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -29,7 +29,7 @@
     "ProWebbCore.RDS": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "/",
+      "launchUrl": "",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Production"
       },

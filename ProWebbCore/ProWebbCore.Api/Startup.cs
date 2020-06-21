@@ -17,15 +17,14 @@ namespace ProWebbCore.Api
     {
         private readonly IConfiguration _configuration;
 
-        public Startup(IConfiguration configuration, IWebHostEnvironment env)
+        public Startup(IConfiguration configuration, IHostEnvironment env)
         {
-            // var builder = new ConfigurationBuilder()
-            //     .SetBasePath(env.ContentRootPath)
-            //     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-            //     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-            //     .AddEnvironmentVariables();
-            //_configuration = builder.Build();
-            _configuration = configuration;
+            var Configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: false, reloadOnChange: true)
+                .AddEnvironmentVariables();
+
+                _configuration = Configuration.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -33,7 +32,7 @@ namespace ProWebbCore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options => options.UseMySql((_configuration.GetConnectionString("DatabaseConnectionString"))));
+            services.AddDbContext<AppDbContext>(options => options.UseMySql(_configuration.GetConnectionString("DatabaseConnectionString")));
 
             services.AddAWSService<IAmazonS3>(_configuration.GetAWSOptions());
             services.AddSingleton<IBucketRepository, BucketRepository>();
