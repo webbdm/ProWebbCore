@@ -34,9 +34,13 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 
-appsettings.*.json
-*appsettings.*.json
-*appsettings/json
+# appsettings.*.json This doesn't work for some reason
+
+# provide a .example.json fiel instead
+appsettings.json
+
+appsettings.Production.json
+appsettings.Development.json
 
 # For local deployments to AWS EBS from Visual Studio AWS Toolkit
 ProWebbCore/ProWebbCore.Api/aws-beanstalk-tools-defaults.json
