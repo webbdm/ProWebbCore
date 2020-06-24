@@ -17,6 +17,8 @@ namespace ProWebbCore.Api
     {
         private readonly IConfiguration _configuration;
 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration, IHostEnvironment env)
         {
             var Configuration = new ConfigurationBuilder()
@@ -24,7 +26,7 @@ namespace ProWebbCore.Api
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: false, reloadOnChange: true)
                 .AddEnvironmentVariables();
 
-                _configuration = Configuration.Build();
+            _configuration = Configuration.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -47,6 +49,17 @@ namespace ProWebbCore.Api
             services.AddScoped<ISkillRepository, SkillRepository>();
             services.AddScoped<IResumeRepository, ResumeRepository>();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                              builder =>
+                              {
+                                  builder.WithOrigins(_configuration["ClientString"])
+                                                    .AllowAnyHeader()
+                                                    .AllowAnyMethod();
+                              });
+            });
+
             services.AddControllers();
         }
 
@@ -61,9 +74,12 @@ namespace ProWebbCore.Api
 
             // context.Database.Migrate(); // Not always needed
 
+            app.UseCors(MyAllowSpecificOrigins);
+            
             app.UseMvc();
 
             app.UseRouting();
+
 
             app.UseAuthorization();
 
