@@ -1,6 +1,5 @@
 version: "3.7"
 services:
-  # Note that this 'db' becomes the service name. 'localhost' will not work as the service name in prod.
   db:
     image: mysql:latest
     environment:
@@ -9,7 +8,7 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: atiba-10
     ports:
-      - 3307:3306
+      - 3307:3306 # This currently (As of 6/26) can't connect to API anymore. Who knows why ¯\_(ツ)_/¯
     restart: always
     volumes:
       - db_data_container:/var/lib/mysql
@@ -22,5 +21,7 @@ services:
     build:
       context: ./ProWebbCore
       dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
 volumes:
   db_data_container: {}
