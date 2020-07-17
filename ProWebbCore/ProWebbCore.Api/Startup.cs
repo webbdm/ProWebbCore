@@ -34,6 +34,23 @@ namespace ProWebbCore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                              builder =>
+                              {
+                                  // This doesn't work ¯\_(?)_/¯
+                                  // There's possibly an issue with .NET Core CORS middleware
+                                  builder.WithOrigins(_configuration["ClientString"])
+                                                    .SetIsOriginAllowedToAllowWildcardSubdomains()
+                                                    .AllowCredentials()
+                                                    .AllowAnyMethod()
+                                                    .AllowAnyHeader();
+                              });
+            });
+
+            services.AddMvc(option => option.EnableEndpointRouting = false);
+
             services.AddDbContext<AppDbContext>(options => options.UseMySql(_configuration.GetConnectionString("DatabaseConnectionString"), 
                 providerOptions => providerOptions.EnableRetryOnFailure()));
 
@@ -41,25 +58,10 @@ namespace ProWebbCore.Api
             services.AddSingleton<IBucketRepository, BucketRepository>();
             services.AddSingleton<IFilesRepository, FilesRepository>();
 
-            services.AddMvc(option => option.EnableEndpointRouting = false);
-
-
-
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IJobRepository, JobRepository>();
             services.AddScoped<ISkillRepository, SkillRepository>();
             services.AddScoped<IResumeRepository, ResumeRepository>();
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
-                              builder =>
-                              {
-                                  builder.WithOrigins(_configuration["ClientString"])
-                                                    .AllowAnyHeader()
-                                                    .AllowAnyMethod();
-                              });
-            });
 
             services.AddControllers();
         }
@@ -75,12 +77,14 @@ namespace ProWebbCore.Api
 
             // context.Database.Migrate(); // Not always needed
 
-            app.UseCors(MyAllowSpecificOrigins);
-            
-            app.UseMvc();
-
             app.UseRouting();
 
+            // app.UseCors(MyAllowSpecificOrigins); 
+
+            // Use this for now as the above still throws CORS errors
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+            app.UseMvc();
 
             app.UseAuthorization();
 
