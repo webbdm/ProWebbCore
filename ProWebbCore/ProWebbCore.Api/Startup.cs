@@ -74,9 +74,14 @@ namespace ProWebbCore.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
 
             // context.Database.Migrate(); // Not always needed
 
+            app.UseHttpsRedirection();
             app.UseRouting();
 
             // app.UseCors(MyAllowSpecificOrigins); 

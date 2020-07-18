@@ -24,7 +24,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:3000"
+      "applicationUrl": "https://localhost:3000"
     },
     "ProWebbCore.RDS": {
       "commandName": "Project",
@@ -33,7 +33,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Production"
       },
-      "applicationUrl": "http://localhost:3000"
+      "applicationUrl": "https://localhost:3000"
     },
     "Docker": {
       "commandName": "Docker",
