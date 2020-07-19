@@ -11,5 +11,6 @@ namespace ProWebbCore.Shared
         public int UserId { get; set; }
 
         public List<Skill> Skills { get; set; }
+        public List<Job> Jobs { get; set; }
     }
 }

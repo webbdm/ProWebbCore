@@ -39,7 +39,7 @@ namespace ProWebbCore.Api
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                               builder =>
                               {
-                                  // This doesn't work ¯\_(?)_/¯
+                                  // This doesn't work
                                   // There's possibly an issue with .NET Core CORS middleware
                                   builder.WithOrigins(_configuration["ClientString"])
                                                     .SetIsOriginAllowedToAllowWildcardSubdomains()
