@@ -10,6 +10,7 @@ using ProWebbCore.Infrastructure.Communication.Interfaces;
 using Amazon.S3;
 using System;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace ProWebbCore.Api
 {
@@ -78,6 +79,11 @@ namespace ProWebbCore.Api
             {
                 app.UseHsts();
             }
+
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
 
             // context.Database.Migrate(); // Not always needed
 
