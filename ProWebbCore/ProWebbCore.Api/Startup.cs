@@ -10,6 +10,7 @@ using ProWebbCore.Infrastructure.Communication.Interfaces;
 using Amazon.S3;
 using System;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace ProWebbCore.Api
 {
@@ -39,7 +40,7 @@ namespace ProWebbCore.Api
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                               builder =>
                               {
-                                  // This doesn't work ¯\_(?)_/¯
+                                  // This doesn't work
                                   // There's possibly an issue with .NET Core CORS middleware
                                   builder.WithOrigins(_configuration["ClientString"])
                                                     .SetIsOriginAllowedToAllowWildcardSubdomains()
@@ -78,6 +79,11 @@ namespace ProWebbCore.Api
             {
                 app.UseHsts();
             }
+
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
 
             // context.Database.Migrate(); // Not always needed
 

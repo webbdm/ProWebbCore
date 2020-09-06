@@ -24,6 +24,8 @@ namespace ProWebbCore.Api.Models
             return _appDbContext.Users
                 .Include(u => u.Resumes)
                 .ThenInclude(r => r.Skills)
+                .Include(u => u.Resumes)
+                .ThenInclude(r => r.Jobs)
                 .FirstOrDefault(c => c.Id == id);
         }
 
