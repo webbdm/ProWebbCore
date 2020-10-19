@@ -42,7 +42,7 @@ launchSettings.json
 appsettings.json
 
 appsettings.Production.json
-# appsettings.Development.json
+appsettings.Development.json
 
 # For local deployments to AWS EBS from Visual Studio AWS Toolkit
 ProWebbCore/ProWebbCore.Api/aws-beanstalk-tools-defaults.json
