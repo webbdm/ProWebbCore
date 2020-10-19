@@ -26,6 +26,7 @@ namespace ProWebbCore.Api.Models
                 .ThenInclude(r => r.Skills)
                 .Include(u => u.Resumes)
                 .ThenInclude(r => r.Jobs)
+                .Include(u => u.Projects)
                 .FirstOrDefault(c => c.Id == id);
         }
 
