@@ -13,5 +13,6 @@ namespace ProWebbCore.Shared
         public string Email { get; set; }
 
         public List<Resume> Resumes { get; set; }
+        public List<Project> Projects { get; set; }
     }
 }
