@@ -14,5 +14,6 @@ namespace ProWebbCore.Api.Models
         public DbSet<Resume> Resumes { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<Job> Jobs { get; set; }
+        public DbSet<ProWebbCore.Shared.Project> Project { get; set; }
     }
 }
