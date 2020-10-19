@@ -34,6 +34,8 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 
+launchSettings.json
+
 # appsettings.*.json This doesn't work for some reason
 
 # provide a .example.json fiel instead
