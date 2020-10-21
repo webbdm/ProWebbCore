@@ -1,6 +1,9 @@
 ﻿using ProWebbCore.Api.Models;
 using ProWebbCore.Shared;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace ProWebbCore.Api.Controllers
 {
@@ -9,11 +12,14 @@ namespace ProWebbCore.Api.Controllers
     public class UserController : Controller
     {
         private readonly IUserRepository _userRepository;
+        private readonly AppDbContext _context;
 
-        public UserController(IUserRepository userRepository)
+        public UserController(IUserRepository userRepository, AppDbContext context)
         {
             _userRepository = userRepository;
+            _context = context;
         }
+
 
         [HttpGet]
         public IActionResult GetAllUsers()
@@ -45,29 +51,36 @@ namespace ProWebbCore.Api.Controllers
 
             return Created("user", createdUser);
         }
-
-        [HttpPut]
-        public IActionResult UpdateUser([FromBody] User user)
+        // PUT: api/Projects/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [HttpPut("{id}")]
+        public async Task<IActionResult> updateUser(int id, User user)
         {
-            if (user == null)
-                return BadRequest();
-
-            if (user.FirstName == string.Empty || user.LastName == string.Empty)
+            if (id != user.Id)
             {
-                ModelState.AddModelError("Name/FirstName", "The name or first name shouldn't be empty");
+                return BadRequest();
             }
 
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+            _context.Entry(user).State = EntityState.Modified;
 
-            var userToUpdate = _userRepository.GetUserById(user.Id);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UserExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-            if (userToUpdate == null)
-                return NotFound();
-
-            _userRepository.UpdateUser(user);
-
-            return NoContent(); //success
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
@@ -83,6 +96,11 @@ namespace ProWebbCore.Api.Controllers
             _userRepository.DeleteUser(id);
 
             return NoContent();//success
+        }
+
+        private bool UserExists(int id)
+        {
+            return _context.Users.Any(e => e.Id == id);
         }
     }
 }
