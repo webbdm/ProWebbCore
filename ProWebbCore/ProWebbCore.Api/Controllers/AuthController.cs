@@ -2,19 +2,20 @@
 using ProWebbCore.Shared;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using System;
 
 namespace ProWebbCore.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class AuthController : Controller
     {
 
-        [HttpPost]
-        [Route("/auth/callback")]
-        public bool Callback()
+        [Route("callback")]
+        [HttpGet]
+        public IActionResult callback()
         {
-            return true;
+            return Ok("yayyyyyyy");
         }
     }
 }
