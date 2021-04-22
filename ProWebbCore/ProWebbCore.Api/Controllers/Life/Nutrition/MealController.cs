@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ProWebbCore.Api.Models;
 using ProWebbCore.Shared.Life.Nutrition;
@@ -26,6 +24,23 @@ namespace ProWebbCore.Api.Controllers.Life.Nutrition
         public List<Meal>GetMeals()
         {
             var meals = _appDbContext.Meal.ToList();
+            
+            foreach (var meal in meals)
+            {
+                var query = (from mealfood in _appDbContext.Set<MealFood>().Where(m => m.Id == meal.Id)
+                            join food in _appDbContext.Set<Food>() 
+                            on mealfood.FoodId equals food.Id
+                            select new Food {
+                                Name = food.Name,
+                                Brand = food.Brand,
+                                Carbohydrate = food.Carbohydrate,
+                                Fat = food.Fat,
+                                Protein = food.Protein
+                            }).ToList();
+
+                meal.Foods = query;
+            }
+
             return meals;
         }
     }
