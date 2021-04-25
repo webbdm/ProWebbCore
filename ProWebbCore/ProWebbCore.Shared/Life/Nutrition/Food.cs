@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProWebbCore.Shared.Life.Nutrition
@@ -12,9 +12,5 @@ namespace ProWebbCore.Shared.Life.Nutrition
         public int Protein { get; set; }
         public int Carbohydrate { get; set; }
         public int Fat { get; set; }
-
-
-
-        //public List<Food> Foods { get; set; }
     }
 }

@@ -20,5 +20,12 @@ namespace ProWebbCore.Api.Models
         public DbSet<Meal> Meal { get; set; }
         public DbSet<Food> Food { get; set; }
         public DbSet<MealFood> MealFood { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<MealDTO>().Ignore(mf => mf.Foods);
+        }
+
+        
     }
 }

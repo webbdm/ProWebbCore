@@ -21,27 +21,37 @@ namespace ProWebbCore.Api.Controllers.Life.Nutrition
         }
 
         [HttpGet]
-        public List<Meal>GetMeals()
+        public List<MealDTO>GetMeals()
         {
             var meals = _appDbContext.Meal.ToList();
-            
+            var mealData = new List<MealDTO>();
+
             foreach (var meal in meals)
             {
-                var query = (from mealfood in _appDbContext.Set<MealFood>().Where(m => m.Id == meal.Id)
-                            join food in _appDbContext.Set<Food>() 
-                            on mealfood.FoodId equals food.Id
-                            select new Food {
-                                Name = food.Name,
-                                Brand = food.Brand,
-                                Carbohydrate = food.Carbohydrate,
-                                Fat = food.Fat,
-                                Protein = food.Protein
-                            }).ToList();
+                var query = (from mealfood in _appDbContext.Set<MealFood>().Where(m => m.MealId == meal.Id)
+                             join food in _appDbContext.Set<Food>()
+                             on mealfood.FoodId equals food.Id
+                             select new Food
+                             {
+                                 Name = food.Name,
+                                 Brand = food.Brand,
+                                 Carbohydrate = food.Carbohydrate,
+                                 Fat = food.Fat,
+                                 Protein = food.Protein
+                             }).ToList();
 
-                meal.Foods = query;
+
+                mealData.Add(new MealDTO{
+
+                    Id = meal.Id,
+                    Name = meal.Name,
+                    Date = meal.Date,
+                    Foods = query
+                });
+                
             }
 
-            return meals;
+            return mealData;
         }
     }
 }

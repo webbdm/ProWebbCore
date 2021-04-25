@@ -24,7 +24,7 @@ namespace ProWebbCore.Api.Controllers.Life.Nutrition
         [HttpGet]
         public List<Food> GetFoods()
         {
-            var foods = _appDbContext.Food.FromSqlRaw("Select Id, Name, Brand, Protein, Carbohydrate, Fat from Food").ToList();
+            var foods = _appDbContext.Food.ToList();
 
             return foods;
         }
