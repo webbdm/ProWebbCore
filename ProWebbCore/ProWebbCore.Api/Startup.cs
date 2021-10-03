@@ -64,6 +64,8 @@ namespace ProWebbCore.Api
             services.AddScoped<ISkillRepository, SkillRepository>();
             services.AddScoped<IResumeRepository, ResumeRepository>();
 
+            services.AddScoped<KeyRepository>();
+
             services.AddControllers();
         }
 

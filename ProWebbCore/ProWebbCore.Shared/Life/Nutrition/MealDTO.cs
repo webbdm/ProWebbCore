@@ -11,6 +11,6 @@ namespace ProWebbCore.Shared.Life.Nutrition
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
-        public List<Food> Foods { get; set; }
+        public List<MealFoodDTO> Foods { get; set; }
     }
 }

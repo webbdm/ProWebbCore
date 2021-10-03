@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ProWebbCore.Api.Models;
@@ -21,7 +22,7 @@ namespace ProWebbCore.Api.Controllers.Life.Nutrition
         }
 
         [HttpGet]
-        public List<MealDTO>GetMeals()
+        public List<MealDTO> GetMeals()
         {
             var meals = _appDbContext.Meal.ToList();
             var mealData = new List<MealDTO>();
@@ -31,8 +32,11 @@ namespace ProWebbCore.Api.Controllers.Life.Nutrition
                 var query = (from mealfood in _appDbContext.Set<MealFood>().Where(m => m.MealId == meal.Id)
                              join food in _appDbContext.Set<Food>()
                              on mealfood.FoodId equals food.Id
-                             select new Food
+                             select new MealFoodDTO
                              {
+                                 Id = mealfood.Id,
+                                 FoodId = food.Id,
+                                 MealId = mealfood.MealId,
                                  Name = food.Name,
                                  Brand = food.Brand,
                                  Carbohydrate = food.Carbohydrate,
@@ -41,17 +45,39 @@ namespace ProWebbCore.Api.Controllers.Life.Nutrition
                              }).ToList();
 
 
-                mealData.Add(new MealDTO{
+                mealData.Add(new MealDTO {
 
                     Id = meal.Id,
                     Name = meal.Name,
                     Date = meal.Date,
                     Foods = query
                 });
-                
+
             }
 
             return mealData;
+        }
+
+        [HttpPost("addFoodToMeal")]
+        public StatusCodeResult AddFoodToMeal([FromBody] MealFood mealFood)
+        {
+            _appDbContext.MealFood.Add(mealFood);
+            _appDbContext.SaveChanges();
+
+            return Ok();
+
+        }
+
+        [HttpDelete]
+        [Route("deleteFood/{id}")]
+        public StatusCodeResult DeleteFoodToMeal(int id)
+        {
+            MealFood food = _appDbContext.MealFood.Find(id);
+            _appDbContext.Remove(food);
+            _appDbContext.SaveChanges();
+
+            return Ok();
+
         }
     }
 }

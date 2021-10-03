@@ -39,5 +39,7 @@
   <ItemGroup>
     <Folder Include="Controllers\Life\" />
     <Folder Include="Controllers\Life\Nutrition\" />
+    <Folder Include="Models\Numbers\" />
+    <Folder Include="Controllers\Numbers\" />
   </ItemGroup>
 </Project>

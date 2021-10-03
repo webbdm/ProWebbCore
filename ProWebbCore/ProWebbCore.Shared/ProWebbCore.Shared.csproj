@@ -13,5 +13,6 @@
     <Folder Include="Life\" />
     <Folder Include="Life\Fitness\" />
     <Folder Include="Life\Nutrition\" />
+    <Folder Include="Numbers\" />
   </ItemGroup>
 </Project>
