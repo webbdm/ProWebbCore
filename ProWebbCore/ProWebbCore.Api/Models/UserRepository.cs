@@ -19,6 +19,14 @@ namespace ProWebbCore.Api.Models
             return _appDbContext.Users;
         }
 
+        public User GetUserByIdSQL(int id)
+        {
+            var query = (from user in _appDbContext.Set<User>().Where(u=> u.Id == id)
+                         select new User{  
+                         }).ToList();
+            return query[0];
+        }
+
         public User GetUserById(int id)
         {
             return _appDbContext.Users

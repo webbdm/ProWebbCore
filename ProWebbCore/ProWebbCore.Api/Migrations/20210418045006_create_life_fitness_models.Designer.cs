@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProWebbCore.Api.Models;
 
 namespace ProWebbCore.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210418045006_create_life_fitness_models")]
+    partial class create_life_fitness_models
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,28 +93,6 @@ namespace ProWebbCore.Api.Migrations
                     b.ToTable("Meal");
                 });
 
-            modelBuilder.Entity("ProWebbCore.Shared.Life.Nutrition.MealDTO", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int?>("MealId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MealId");
-
-                    b.ToTable("MealDTO");
-                });
-
             modelBuilder.Entity("ProWebbCore.Shared.Life.Nutrition.MealFood", b =>
                 {
                     b.Property<int>("Id")
@@ -130,54 +110,6 @@ namespace ProWebbCore.Api.Migrations
                     b.ToTable("MealFood");
                 });
 
-            modelBuilder.Entity("ProWebbCore.Shared.Numbers.Key", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("KeyName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Key");
-                });
-
-            modelBuilder.Entity("ProWebbCore.Shared.Numbers.KeyNote", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("KeyID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("NoteID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Number")
-                        .HasColumnType("int");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("KeyNote");
-                });
-
-            modelBuilder.Entity("ProWebbCore.Shared.Numbers.Note", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("NoteName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Note");
-                });
-
             modelBuilder.Entity("ProWebbCore.Shared.Project", b =>
                 {
                     b.Property<int>("Id")
@@ -190,16 +122,10 @@ namespace ProWebbCore.Api.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("ImageId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Link")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Type")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("UserId")
@@ -280,13 +206,6 @@ namespace ProWebbCore.Api.Migrations
                         .HasForeignKey("ResumeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("ProWebbCore.Shared.Life.Nutrition.MealDTO", b =>
-                {
-                    b.HasOne("ProWebbCore.Shared.Life.Nutrition.Meal", null)
-                        .WithMany("Items")
-                        .HasForeignKey("MealId");
                 });
 
             modelBuilder.Entity("ProWebbCore.Shared.Project", b =>

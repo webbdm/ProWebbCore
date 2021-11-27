@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProWebbCore.Api.Models;
 
 namespace ProWebbCore.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211002233105_create_keys_and_notes_tables")]
+    partial class create_keys_and_notes_tables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -128,54 +130,6 @@ namespace ProWebbCore.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MealFood");
-                });
-
-            modelBuilder.Entity("ProWebbCore.Shared.Numbers.Key", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("KeyName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Key");
-                });
-
-            modelBuilder.Entity("ProWebbCore.Shared.Numbers.KeyNote", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("KeyID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("NoteID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Number")
-                        .HasColumnType("int");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("KeyNote");
-                });
-
-            modelBuilder.Entity("ProWebbCore.Shared.Numbers.Note", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("NoteName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Note");
                 });
 
             modelBuilder.Entity("ProWebbCore.Shared.Project", b =>
