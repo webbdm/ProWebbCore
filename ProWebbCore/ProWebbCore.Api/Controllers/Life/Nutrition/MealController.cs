@@ -59,14 +59,23 @@ namespace ProWebbCore.Api.Controllers.Life.Nutrition
         }
 
         [HttpPost("addFood")]
-        public StatusCodeResult AddFoodToMeal([FromBody] MealFood mealFood)
+        public MealFoodDTO AddFoodToMeal([FromBody] MealFood mealFood)
         {
             _appDbContext.MealFood.Add(mealFood);
             _appDbContext.SaveChanges();
-            Console.WriteLine($"Food ID - {mealFood.FoodId}");
-            Console.WriteLine($"Meal ID - {mealFood.MealId}");
-            return Ok();
-            
+
+            var food =  _appDbContext.Food.Where(f=>f.Id == mealFood.FoodId).FirstOrDefault();
+
+            return new MealFoodDTO() {
+                    Id = mealFood.Id, 
+                    MealId = mealFood.MealId,
+                    FoodId = mealFood.FoodId,
+                    Name = food.Name,
+                    Brand = food.Brand,
+                    Protein = food.Protein,
+                    Carbohydrate = food.Carbohydrate,
+                    Fat = food.Fat
+                    };
         }
 
         [HttpDelete]
