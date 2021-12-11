@@ -58,14 +58,15 @@ namespace ProWebbCore.Api.Controllers.Life.Nutrition
             return mealData;
         }
 
-        [HttpPost("addFoodToMeal")]
+        [HttpPost("addFood")]
         public StatusCodeResult AddFoodToMeal([FromBody] MealFood mealFood)
         {
             _appDbContext.MealFood.Add(mealFood);
             _appDbContext.SaveChanges();
-
+            Console.WriteLine($"Food ID - {mealFood.FoodId}");
+            Console.WriteLine($"Meal ID - {mealFood.MealId}");
             return Ok();
-
+            
         }
 
         [HttpDelete]
