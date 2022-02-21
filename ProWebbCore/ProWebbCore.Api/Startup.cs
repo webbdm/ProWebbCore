@@ -11,6 +11,7 @@ using Amazon.S3;
 using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
+using ProWebbCore.Api.Models.Life.Nutrition;
 
 namespace ProWebbCore.Api
 {
@@ -58,6 +59,8 @@ namespace ProWebbCore.Api
             services.AddAWSService<IAmazonS3>(_configuration.GetAWSOptions());
             services.AddSingleton<IBucketRepository, BucketRepository>();
             services.AddSingleton<IFilesRepository, FilesRepository>();
+
+            services.AddScoped<IGoalRepository, GoalRepository>();
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IJobRepository, JobRepository>();
