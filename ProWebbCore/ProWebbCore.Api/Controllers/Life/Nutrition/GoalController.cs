@@ -29,5 +29,11 @@ namespace ProWebbCore.Api.Controllers.Life.Nutrition
             return _goalRepository.GetGoalByID(id);
         }
 
+        [HttpPut]
+        public Goal UpdateGoal([FromBody] Goal goal)
+        {
+            return _goalRepository.UpdateGoal(goal);
+        }
+
     }
 }

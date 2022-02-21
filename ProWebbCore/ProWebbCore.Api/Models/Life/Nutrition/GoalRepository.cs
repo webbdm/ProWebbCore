@@ -17,5 +17,22 @@ namespace ProWebbCore.Api.Models.Life.Nutrition
         {
             return _appDbContext.Goal.FirstOrDefault(g => g.ID == id);
         }
+
+        public Goal UpdateGoal(Goal goal)
+        {
+            var foundGoal = _appDbContext.Goal.FirstOrDefault(g => g.ID == goal.ID);
+
+            if (foundGoal != null)
+            {
+                foundGoal.Calories = goal.Calories;
+                // Add changes here
+                _appDbContext.SaveChanges();
+
+                return foundGoal;
+            }
+
+
+            return goal;
+        }
     }
 }
