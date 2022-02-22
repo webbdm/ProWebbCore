@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using ProWebbCore.Shared.Life.Nutrition;
 
 namespace ProWebbCore.Api.Models.Life.Nutrition
@@ -15,7 +16,7 @@ namespace ProWebbCore.Api.Models.Life.Nutrition
 
         public Goal GetGoalByID(int id)
         {
-            return _appDbContext.Goal.FirstOrDefault(g => g.ID == id);
+            return _appDbContext.Goal.Include(g => g.Split).FirstOrDefault(g => g.ID == id);
         }
 
         public Goal UpdateGoal(Goal goal)
@@ -25,13 +26,15 @@ namespace ProWebbCore.Api.Models.Life.Nutrition
             if (foundGoal != null)
             {
                 foundGoal.Calories = goal.Calories;
-                // Add changes here
                 _appDbContext.SaveChanges();
+
+                // Recalc and return macros
+                foundGoal.SetMacros(_appDbContext.Split.FirstOrDefault(s => s.GoalID == goal.ID));
 
                 return foundGoal;
             }
 
-
+            
             return goal;
         }
     }
