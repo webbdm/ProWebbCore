@@ -30,7 +30,6 @@ namespace ProWebbCore.Shared.Life.Nutrition
 
         public Dictionary<string, double> GetFactors()
         {
-
             return new Dictionary<string, double> {
                 { "PROTEIN", 4},
                 { "FAT", 9},
