@@ -25,11 +25,18 @@ namespace ProWebbCore.Api.Models.Life.Nutrition
 
             if (foundGoal != null)
             {
-                foundGoal.Calories = goal.Calories;
+                foundGoal.Calories = goal.Calories;   
+
+                // Update the Split
+                var split = _appDbContext.Split.FirstOrDefault(s => s.GoalID == goal.ID);
+                split.ProteinSplit = goal.Split.ProteinSplit;
+                split.FatSplit = goal.Split.FatSplit;
+                split.CarbohydrateSplit = goal.Split.CarbohydrateSplit;
+
                 _appDbContext.SaveChanges();
 
                 // Recalc and return macros
-                foundGoal.SetMacros(_appDbContext.Split.FirstOrDefault(s => s.GoalID == goal.ID));
+                foundGoal.SetMacros(split);
 
                 return foundGoal;
             }
