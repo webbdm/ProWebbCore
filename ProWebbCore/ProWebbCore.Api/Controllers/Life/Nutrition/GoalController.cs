@@ -26,7 +26,10 @@ namespace ProWebbCore.Api.Controllers.Life.Nutrition
         [HttpGet("{id:int}")]
         public Goal GetGoalByID(int id)
         {
-            return _goalRepository.GetGoalByID(id);
+            
+            Goal goal = _goalRepository.GetGoalByID(id);
+            goal.SetMacros(goal.Split);
+            return goal;
         }
 
         [HttpPut]
@@ -34,6 +37,5 @@ namespace ProWebbCore.Api.Controllers.Life.Nutrition
         {
             return _goalRepository.UpdateGoal(goal);
         }
-
     }
 }

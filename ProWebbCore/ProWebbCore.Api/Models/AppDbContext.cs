@@ -19,6 +19,7 @@ namespace ProWebbCore.Api.Models
         public DbSet<Project> Project { get; set; }
 
         public DbSet<Goal> Goal { get; set; }
+        public DbSet<Split> Split { get; set; }
         public DbSet<Meal> Meal { get; set; }
         public DbSet<Food> Food { get; set; }
         public DbSet<MealFood> MealFood { get; set; }
